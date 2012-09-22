@@ -53,13 +53,13 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
 
-              android:layout_below="@id/et_title"
-              android:layout_alignLeft="@id/et_password"
+               android:layout_below="@id/et_title"
+              android:layout_alignLeft="@+id/et_password"
 
               android:layout_marginLeft="5dp"
               android:text="@string/tv_password"/>
 
-    <EditText android:id="@+id/et_password"
+    <EditText android:id="@id/et_password"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
 
@@ -87,19 +87,26 @@
               android:hint="@string/et_note_hint"
             />
 
-    <Button android:id="@+id/btn_positive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@id/et_note"
-            android:text=""
-            />
-    <Button android:id="@+id/btn_cancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/btn_positive"
-            android:layout_below="@id/et_note"
-            android:text="@string/btn_cancel_txt"
-            />
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+
+                  android:layout_alignParentLeft="true"
+                  android:layout_below="@id/et_note"
+            >
+        <Button android:id="@+id/btn_positive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text=""
+                />
+        <Button android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/btn_cancel_txt"
+                />
+    </LinearLayout>
 </RelativeLayout>

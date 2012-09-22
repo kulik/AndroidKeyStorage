@@ -25,6 +25,18 @@ public class KeyItem implements Parcelable {
         mNote = parcel.readString();
     }
 
+    public KeyItem(long id, String title, String login, String pass, String note) {
+        mId = id;
+        mTitle = title;
+        mLogin = login;
+        mPassword = pass;
+        mNote = note;
+    }
+
+    public KeyItem(long id) {
+        mId = id;
+    }
+
     public String getLogin() {
         return mLogin;
     }

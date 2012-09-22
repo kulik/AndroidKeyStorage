@@ -3,6 +3,7 @@ package com.kulik.keystore;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 public class ClipboardProvider implements View.OnClickListener {
 
     ClipboardManager mClipboard;
+    private static final String TAG = ClipboardProvider.class.getSimpleName();
 
     public ClipboardProvider(Context context) {
 
@@ -27,8 +29,11 @@ public class ClipboardProvider implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Log.d(TAG, "onItemClick()");
+
         TextView tv = (TextView) view;
         String text = (String) tv.getText();
+        Log.d(TAG, "onItemClick() Text:" + text);
         ClipData clip = ClipData.newPlainText("key provider", text);
         mClipboard.setPrimaryClip(clip);
     }

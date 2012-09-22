@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.drm.DrmStore;
+import android.util.Log;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,9 +14,11 @@ import android.drm.DrmStore;
  * To change this template use File | Settings | File Templates.
  */
 public class ActionEditKey extends MyAction {
+    private static final String TAG = ActionEditKey.class.getSimpleName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(TAG, "onRecive()");
         KeyItem keyItem = intent.getParcelableExtra(KeyItem.class.getName());
     }
 }

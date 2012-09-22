@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+    <TextView android:id="@+id/tv_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="5dp"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentTop="true"
+              android:text="@string/tv_title"/>
+
+    <EditText android:id="@+id/et_title"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/tv_title"
+              android:hint="@string/et_title_hint"/>
+
+    <TextView android:id="@+id/tv_login"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@id/et_title"
+              android:layout_alignParentLeft="true"
+
+              android:layout_marginLeft="5dp"
+              android:text="@string/tv_login"/>
+
+    <EditText android:id="@+id/et_login"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_alignLeft="@id/et_login"
+              android:layout_below="@id/tv_login"
+              android:hint="@string/et_login_hint"/>
+
+    <TextView android:id="@+id/dog"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@id/et_title"
+              android:layout_toRightOf="@id/et_login"
+
+              android:paddingTop="20dip"
+              android:text="@string/dog"
+            />
+
+    <TextView android:id="@+id/tv_password"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@id/et_title"
+              android:layout_alignLeft="@id/et_password"
+
+              android:layout_marginLeft="5dp"
+              android:text="@string/tv_password"/>
+
+    <EditText android:id="@+id/et_password"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@id/tv_password"
+              android:layout_toRightOf="@id/dog"
+              android:layout_alignParentRight="true"
+
+              android:hint="@string/tv_password_hint"/>
+
+    <TextView android:id="@+id/tv_note"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:layout_below="@id/et_login"
+              android:layout_marginLeft="5dp"
+              android:text="@string/tv_note"
+            />
+
+    <EditText android:id="@+id/et_note"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/tv_note"
+              android:maxLines="4"
+              android:maxLength="1000"
+              android:hint="@string/et_note_hint"
+            />
+
+    <Button android:id="@+id/btn_positive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/et_note"
+            android:text=""
+            />
+    <Button android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/btn_positive"
+            android:layout_below="@id/et_note"
+            android:text="@string/btn_cancel_txt"
+            />
+</RelativeLayout>

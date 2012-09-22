@@ -2,6 +2,7 @@ package com.kulik.keystore;
 
 import android.content.Context;
 import android.content.Intent;
+import android.drm.DrmStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import java.util.List;
  * Time: 12:39
  * To change this template use File | Settings | File Templates.
  */
-public class KeyListAdapter extends ArrayAdapter<KeyItem> implements View.OnLongClickListener, AdapterView.OnItemLongClickListener {
+public class KeyListAdapter extends ArrayAdapter<KeyItem> implements AdapterView.OnItemLongClickListener {
     private LayoutInflater mLayoutInflater;
     private ClipboardProvider mClipboardProvider;
 
@@ -33,8 +34,6 @@ public class KeyListAdapter extends ArrayAdapter<KeyItem> implements View.OnLong
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.keystore_item_layout, parent);
         }
-
-        convertView.setOnLongClickListener(this);
 
         KeyItem keyItem = getItem(position);
 
@@ -52,14 +51,14 @@ public class KeyListAdapter extends ArrayAdapter<KeyItem> implements View.OnLong
         TextView tvNote = (TextView) convertView.findViewById(R.id.tv_note);
         tvNote.setText(keyItem.getNote());
 
-        return super.getView(position, convertView, parent);    //To change body of overridden methods use File | Settings | File Templates.
+        return super.getView(position, convertView, parent);
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent editIntent = new Intent();
-        editIntent.
+        Intent editIntent = new Intent(Intent.ACTION_EDIT);
+        editIntent.putExtra(KeyItem.class.getName(), getItem(i));
         getContext().sendBroadcast(editIntent);
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return true;
     }
 }

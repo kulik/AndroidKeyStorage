@@ -3,5 +3,14 @@
     <string name="app_name">Keystore</string>
 
     <string name="dog">d@d</string>
+    <string name="tv_title">Title:</string>
+    <string name="et_title_hint">Title</string>
+    <string name="tv_login">Login:</string>
+    <string name="et_login_hint">Login</string>
+    <string name="tv_password">Password</string>
+    <string name="tv_password_hint">Password</string>
+    <string name="tv_note">Note:</string>
+    <string name="et_note_hint">Note</string>
+    <string name="btn_cancel_txt">Cancel</string>
     <!--&#0064-->
 </resources>

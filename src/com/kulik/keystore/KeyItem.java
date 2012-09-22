@@ -1,18 +1,29 @@
 package com.kulik.keystore;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: kulik
  * Date: 22.09.12
  * Time: 12:40
- * To change this template use File | Settings | File Templates.
  */
-public class KeyItem {
+public class KeyItem implements Parcelable {
 
+    private long mId;
     private String mTitle;
     private String mPassword;
     private String mLogin;
     private String mNote;
+
+    public KeyItem(Parcel parcel) {
+        mId = parcel.readLong();
+        mTitle = parcel.readString();
+        mLogin = parcel.readString();
+        mPassword = parcel.readString();
+        mNote = parcel.readString();
+    }
 
     public String getLogin() {
         return mLogin;
@@ -50,5 +61,27 @@ public class KeyItem {
     public String toString() {
         return "Title: " + mTitle + "; Login: " + mLogin + "; Pass: " + ((mPassword == null) ? "null" : "***")
                 + "; Note: " + mNote;
+    }
+
+    public long getId() {
+        return mId;
+    }
+
+    public void setId(long id) {
+        mId = id;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeLong(mId);
+        parcel.writeString(mTitle);
+        parcel.writeString(mLogin);
+        parcel.writeString(mPassword);
+        parcel.writeString(mNote);
     }
 }

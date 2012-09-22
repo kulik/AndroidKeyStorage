@@ -12,5 +12,22 @@
 bin/
 gen/
 
+# IDEA files
+.idea/
+out/
+*.iml
+
+# Eclipse files
+.userSettings/
+.settings/
+.classpath
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Visual Studio
+_UpgradeReport_Files/
+/*/_ReSharper.*/
+
 # Local configuration file (sdk path, etc)
 local.properties

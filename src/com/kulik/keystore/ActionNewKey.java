@@ -1,9 +1,8 @@
 package com.kulik.keystore;
 
-import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,8 +13,13 @@ import android.content.Intent;
  */
 public class ActionNewKey extends MyAction {
 
+    public ActionNewKey() {
+        super(new IntentFilter(ActionNewKey.class.getName()));
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
     }
+
 }

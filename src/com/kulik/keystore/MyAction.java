@@ -2,6 +2,7 @@ package com.kulik.keystore;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.IntentFilter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +12,16 @@ import android.content.Context;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class MyAction extends BroadcastReceiver {
+
+    private IntentFilter mIntentFilter;
+
+    protected MyAction(IntentFilter intentFilter) {
+        mIntentFilter = intentFilter;
+    }
+
+    public IntentFilter getIntentFilter() {
+        return mIntentFilter;
+    }
 
 
 }

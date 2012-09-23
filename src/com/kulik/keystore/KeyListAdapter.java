@@ -61,7 +61,7 @@ public class KeyListAdapter extends ArrayAdapter<KeyItem> implements AdapterView
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
         Log.d(TAG, "onItemLongClick()");
 
-        Intent editIntent = new Intent(Intent.ACTION_EDIT);
+        Intent editIntent = new Intent(ActionEditKey.class.getName());
         editIntent.putExtra(KeyItem.class.getName(), getItem(i));
         getContext().sendBroadcast(editIntent);
         return true;

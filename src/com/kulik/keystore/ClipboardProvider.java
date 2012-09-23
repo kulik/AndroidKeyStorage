@@ -19,6 +19,12 @@ public class ClipboardProvider implements View.OnClickListener {
 
     ClipboardManager mClipboard;
     private static final String TAG = ClipboardProvider.class.getSimpleName();
+    private ClipboardManager.OnPrimaryClipChangedListener mChangeListener = new ClipboardManager.OnPrimaryClipChangedListener() {
+        @Override
+        public void onPrimaryClipChanged() {
+            Log.d(TAG, "OnPrimaryClipChangedListener");
+        }
+    };
 
     public ClipboardProvider(Context context) {
 
@@ -34,7 +40,9 @@ public class ClipboardProvider implements View.OnClickListener {
         TextView tv = (TextView) view;
         String text = (String) tv.getText();
         Log.d(TAG, "onItemClick() Text:" + text);
+
         ClipData clip = ClipData.newPlainText("key provider", text);
         mClipboard.setPrimaryClip(clip);
+
     }
 }

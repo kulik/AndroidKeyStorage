@@ -1,9 +1,8 @@
 package com.kulik.keystore;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.drm.DrmStore;
+import android.content.IntentFilter;
 import android.util.Log;
 
 /**
@@ -16,9 +15,14 @@ import android.util.Log;
 public class ActionEditKey extends MyAction {
     private static final String TAG = ActionEditKey.class.getSimpleName();
 
+    public ActionEditKey() {
+        super(new IntentFilter(ActionEditKey.class.getName()));
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d(TAG, "onRecive()");
+        Log.d(TAG, "onRecive()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
         KeyItem keyItem = intent.getParcelableExtra(KeyItem.class.getName());
     }
+
 }

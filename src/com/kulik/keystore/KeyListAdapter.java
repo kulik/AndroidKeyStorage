@@ -3,6 +3,7 @@ package com.kulik.keystore;
 import android.content.Context;
 import android.content.Intent;
 import android.drm.DrmStore;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,7 +64,8 @@ public class KeyListAdapter extends ArrayAdapter<KeyItem> implements AdapterView
 
         Intent editIntent = new Intent(ActionEditKey.class.getName());
         editIntent.putExtra(KeyItem.class.getName(), getItem(i));
-        getContext().sendBroadcast(editIntent);
+
+        LocalBroadcastManager.getInstance(getContext()).sendBroadcast(editIntent);
         return true;
     }
 }

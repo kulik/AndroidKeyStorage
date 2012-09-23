@@ -11,11 +11,25 @@ import android.os.Parcelable;
  */
 public class KeyItem implements Parcelable {
 
-    private long mId;
+    private long mId = -1;
     private String mTitle;
     private String mPassword;
     private String mLogin;
     private String mNote;
+
+//    public static final Parcelable.Creator<KeyItem> CREATOR
+//            = new Parcelable.Creator<KeyItem>() {
+//        public KeyItem createFromParcel(Parcel in) {
+//            return new KeyItem(in);
+//        }
+//
+//        public KeyItem[] newArray(int size) {
+//            return new KeyItem[size];
+//        }
+//    };
+
+    public  KeyItem() {
+    }
 
     public KeyItem(Parcel parcel) {
         mId = parcel.readLong();

@@ -1,5 +1,6 @@
 package com.kulik.keystore;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -22,4 +23,13 @@ public class ActionNewKey extends MyAction {
 
     }
 
+    @Override
+    public void onRegistrate(Activity activity) {
+
+    }
+
+    @Override
+    public void onUnRegistrate() {
+
+    }
 }

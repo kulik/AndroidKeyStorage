@@ -1,8 +1,7 @@
 package com.kulik.keystore;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
 import java.util.List;
@@ -15,20 +14,22 @@ import java.util.List;
  */
 public class ActionManager {
 
-    public static void registrateActions(Context context, List<MyAction> actions) {
+    public static void registrateActions(Activity activity, List<MyAction> actions) {
         if (actions != null) {
-            LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(context);
+            LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(activity);
             for (MyAction action : actions) {
                 if (action != null) {
+                    action.onRegistrate(activity);
                     broadcastManager.registerReceiver(action, action.getIntentFilter());
                 }
             }
         }
     }
 
-    public static void registrateAction(Context context, MyAction action) {
+    public static void registrateAction(Activity activity, MyAction action) {
         if (action != null) {
-            LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(context);
+            LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(activity);
+            action.onRegistrate(activity);
             broadcastManager.registerReceiver(action, action.getIntentFilter());
         }
     }
@@ -38,6 +39,7 @@ public class ActionManager {
             LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(context);
             for (MyAction action : actions) {
                 if (action != null) {
+                    action.onUnRegistrate();
                     broadcastManager.unregisterReceiver(action);
                 }
             }
@@ -47,6 +49,7 @@ public class ActionManager {
     public static void unregistrateAction(Context context, MyAction action) {
         if (action != null) {
             LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(context);
+            action.onUnRegistrate();
             broadcastManager.unregisterReceiver(action);
         }
     }

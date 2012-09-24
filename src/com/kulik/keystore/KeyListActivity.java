@@ -5,6 +5,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class KeyListActivity extends FragmentActivity {
+
+    private static final String TAG = KeyListActivity.class.getSimpleName();
 
     private KeyListAdapter mKeyListAdapter;
     private List<MyAction> mActions = new ArrayList<MyAction>();
@@ -46,6 +51,20 @@ public class KeyListActivity extends FragmentActivity {
         mKeyListAdapter = new KeyListAdapter(this, getKeyListStub());
         keyListView.setAdapter(mKeyListAdapter);
         keyListView.setOnItemLongClickListener(mKeyListAdapter);
+
+        Button btnNew = (Button) findViewById(R.id.btn_new);
+        btnNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onItemLongClick()");
+
+                Intent editIntent = new Intent(ActionNewKey.class.getName());
+                //editIntent.putExtra(KeyItem.class.getName(), new Item);
+
+                LocalBroadcastManager.getInstance(KeyListActivity.this).sendBroadcast(editIntent);
+
+            }
+        });
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.kulik.keystore;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.IntentFilter;
 
 /**
@@ -22,6 +22,16 @@ public abstract class MyAction extends BroadcastReceiver {
     public IntentFilter getIntentFilter() {
         return mIntentFilter;
     }
+
+    /**
+     * Called when ActionManager sign Action to Activity
+     */
+    protected void onRegistrate(Activity activity) { }
+
+    /**
+     * Called when ActionManager sign Action to Activity
+     */
+    protected void onUnRegistrate() { }
 
 
 }

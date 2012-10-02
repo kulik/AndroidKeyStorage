@@ -1,0 +1,21 @@
+<resources>
+    <style name="Codes" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:textColor"></item>-->
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">15pt</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/key_background</item>
+    </style>
+    <style name="CodeEditText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--<item name="android:textColor"></item>-->
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">15pt</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/key_background</item>
+        <item name="android:inputType">numberPassword</item>
+    </style>
+</resources>

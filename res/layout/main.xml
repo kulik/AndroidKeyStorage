@@ -3,25 +3,11 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
         >
-    <Button android:id="@+id/btn_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:background="@drawable/plus_sign"
-           android:layout_alignParentRight="true"
 
-
-            />
-
-
-    <ListView android:id="@+id/lv_keys"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-           />
-    <FrameLayout android:id="@+id/edit_fragment"
+    <FrameLayout android:id="@+id/fragment_container"
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"
                  android:layout_margin="20dp"
-                 android:layout_above="@id/lv_keys"
                  android:background="@android:color/transparent"
                  />
 
